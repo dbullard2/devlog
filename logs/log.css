@@ -1,0 +1,31 @@
+html, body{
+  padding: 0;
+  margin: 0;
+}
+
+@font-face{
+  font-family: 'dank';
+  src: url('../Dank_Mono_Regular.otf');
+}
+
+body{
+  background-color: #131418;
+  font-family: "dank";
+}
+
+h1{
+  color: #47cf73;
+  font-size: 50px;
+}
+
+p{
+  color: #868ca0;
+  font-size: 20px
+}
+
+video{
+  width: 90%;
+  height: 400px;
+  margin: 0 auto;
+  display: block;
+}
