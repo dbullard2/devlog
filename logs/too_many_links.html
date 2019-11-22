@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Too many links</title>
+    <link rel="stylesheet" type="text/css" href="log.css">
+  </head>
+  <body>
+    <h1>Too many links</h1>
+
+    <p>People always say to create projects that you'd use yourself. This is pretty
+    much the first time I'm trying it out, and so far it's been great advice. Most of the time
+    it's hard for me to keep motivated on longer, more complicated projects
+    (which is why tests has sort of been put on the back burner), but on this
+    project, it's been easy for me to keep pushing because I actually want to
+    use it when it's finished. That's pretty much all from me, now let's get to the devlog.</p>
+    <img src="../media/Screenshot_2019-11-22 Bookmarks.png" alt="">
+    <p>So Bookmarks! It's a simple bookmark manager that I made so i could keep
+    my bookmarks and pinned tabs organised aross devices. So far, I just spent a lot
+    of time trying to figure out how to create a new &lt;p&gt; element, allow the user to
+    edit it, and have it save. My first idea was to have a bunch of &lt;p&gt;s hidden
+    and a bunch of text inputs hidden and stacked on top of each other. The input would
+    show up when the user added a new  bookmark folder, and I would take what they typed
+    and set the &lt;p&gt; equal to that value and hide the input. This fell apart when I couldn't
+    figure out how to position the &lt;p&gt; and &lt;input&gt; on top of each other (which I
+    ironically figured out by accident later on while working on something completely unrelated).</p>
+    <p>Eventually, after a lot of trial and error (and a fair bit of googling) I stumbled upon
+    two things: the contenteditable attribute and the insertAdjacentHTML() method. These two things
+    are what I'm currently using to allow users to add bookmark folders. When the new folder button
+    is clicked, I use this jacvascript function to create a new folder:</p>
+    <div class="code">
+      <pre><span class="purple">function</span> <span class="blue">addFolder</span>(){
+        <span class="red">document</span>.<span class="blue">getElementById</span>(<span class="green">'one'</span>).<span class="blue">insertAdjacentHTML</span>(<span class="green">'afterend'</span>, newFolder);
+        localStorage.<span class="red">headerHTML</span> <span class="blue">=</span> header.<span class="red">innerHTML</span>;
+}</pre>
+    </div>
+    <p>The first line gets the one untitled folder theat is on the sidebar on the left by default
+    and, when the new folder button is pressed, inserts a new untitled contenteditable folder underneath
+    it. The folder name the user enters saves whenever they click anywhere on the page.</p>
+
+    <p>And that is pretty much all of the backend I've done so far. The only other JS I've done is
+    make the background and add new bookmark button a random (from an array) colour whenever the page loads.
+    And on the front end, I've done what you can see in the screenshot. And that's what I've done so far.
+    Most of the core functionality is there, but there's still a bunch of stuff I want to add. I need to add
+    the ability to remove bookmark folders once you add them, search functionality, make things responsive,
+    and scrape some images, etc from bookmarked sited to make things look better. So stay tuned!</p>
+  </body>
+</html>
